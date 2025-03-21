@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: 245, 245, 247;
+  --text-color: 0, 0, 0;  /* Changed to pure black for better visibility */
+  --accent-color: 0, 122, 255;
+  --button-color: 230, 230, 235;
+  --header-color: 235, 235, 240;
+  --input-bg-color: 255, 255, 255;
+  --box-color: 250, 250, 252;
+  --success-color: 40, 167, 69;
+  --danger-color: 220, 53, 69;
+  --warning-color: 255, 193, 7;
+}
+
+body {
+  background-color: rgb(var(--bg-color));
+  color: rgb(var(--text-color));
+  font-family: 'Tajawal', 'Inter', sans-serif;
+  font-weight: 500; /* Increased font weight for better visibility */
+}
+
+.btn {
+  @apply px-6 py-3 rounded-md transition-all duration-200 font-bold;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn-success {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.form-control {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black;
+}
+
+.form-label {
+  @apply block text-black font-bold mb-2;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.header {
+  @apply bg-blue-500 text-white py-4 px-6 shadow-md;
+}
+
+.logo-circle {
+  @apply w-36 h-36 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative overflow-hidden;
+}
+
+.logo-circle::before {
+  content: '';
+  @apply absolute w-28 h-28 rounded-full bg-white/20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-circle::after {
+  content: '';
+  @apply absolute w-32 h-32 rounded-full border-2 border-white/30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.table-container {
+  @apply overflow-x-auto;
+}
+
+.data-table {
+  @apply min-w-full bg-white rounded-lg overflow-hidden;
+}
+
+.data-table th {
+  @apply bg-gray-100 text-black font-bold py-3 px-4 text-center;
+}
+
+.data-table td {
+  @apply py-3 px-4 border-b border-gray-200 text-center text-black;
+}
+
+.data-table tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.data-table tr:hover {
+  @apply bg-blue-50;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slideIn {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+  font-weight: normal;
+  font-style: normal;
+}
