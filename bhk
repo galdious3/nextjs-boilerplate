@@ -1,0 +1,182 @@
+<!DOCTYPE html>  
+<html lang="ar">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>واجهة تسجيل الدخول</title>  
+    <style>  
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+            font-family: 'Arial', sans-serif;  
+        }  
+
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            min-height: 100vh;  
+            background: linear-gradient(45deg, #1e3c72, #2a5298);  
+        }  
+
+        .login-container {  
+            background-color: rgba(255, 255, 255, 0.1);  
+            padding: 30px;  
+            border-radius: 10px;  
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+            width: 400px;  
+        }  
+
+        .login-header {  
+            text-align: center;  
+            margin-bottom: 30px;  
+        }  
+
+        .login-header h1 {  
+            color: white;  
+            font-size: 2em;  
+            margin-bottom: 10px;  
+        }  
+
+        .login-form {  
+            display: flex;  
+            flex-direction: column;  
+        }  
+
+        .input-group {  
+            margin-bottom: 15px;  
+        }  
+
+        .input-group label {  
+            color: white;  
+            margin-bottom: 5px;  
+        }  
+
+        .input-group input {  
+            padding: 10px;  
+            border: none;  
+            border-radius: 5px;  
+            background-color: rgba(255, 255, 255, 0.8);  
+            width: 100%;  
+        }  
+
+        .input-group input:focus {  
+            outline: none;  
+            border: 2px solid #1e3c72;  
+        }  
+
+        .remember-me {  
+            margin-top: 10px;  
+            display: flex;  
+            align-items: center;  
+        }  
+
+        .remember-me input {  
+            margin-right: 5px;  
+        }  
+
+        .remember-me label {  
+            color: white;  
+        }  
+
+        .forgot-password {  
+            text-align: center;  
+            margin-top: 10px;  
+        }  
+
+        .forgot-password a {  
+            color: white;  
+            text-decoration: none;  
+        }  
+
+        .forgot-password a:hover {  
+            text-decoration: underline;  
+        }  
+
+        .sign-in-btn {  
+            background-color: #1e3c72;  
+            color: white;  
+            padding: 10px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            font-size: 1em;  
+            margin-top: 15px;  
+        }  
+
+        .sign-in-btn:hover {  
+            background-color: #2a5298;  
+        }  
+
+        .no-account {  
+            text-align: center;  
+            margin-top: 15px;  
+            color: white;  
+        }  
+
+        .sign-up-link {  
+            color: #1e3c72;  
+            text-decoration: none;  
+            font-weight: bold;  
+        }  
+
+        .sign-up-link:hover {  
+            text-decoration: underline;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="login-container">  
+        <div class="login-header">  
+            <h1>تسجيل الدخول</h1>  
+        </div>  
+        <form class="login-form" id="loginForm">  
+            <div class="input-group">  
+                <label for="username">اسم المستخدم</label>  
+                <input type="text" id="username" placeholder="أدخل اسم المستخدم">  
+            </div>  
+            <div class="input-group">  
+                <label for="password">كلمة السر</label>  
+                <input type="password" id="password" placeholder="أدخل كلمة السر">  
+            </div>  
+            <div class="remember-me">  
+                <input type="checkbox" id="rememberMe">  
+                <label for="rememberMe">تذكرني</label>  
+            </div>  
+            <div class="forgot-password">  
+                <a href="#">نسيت كلمة السر؟</a>  
+            </div>  
+            <button type="submit" class="sign-in-btn">تسجيل الدخول</button>  
+        </form>  
+        <div class="no-account">  
+            لا لديك حساب؟   
+            <a href="#" class="sign-up-link">سجل هنا</a>  
+        </div>  
+    </div>  
+
+    <script>  
+        document.getElementById('loginForm').addEventListener('submit', function(e) {  
+            e.preventDefault();  
+            
+            const username = document.getElementById('username').value;  
+            const password = document.getElementById('password').value;  
+            
+            if (username && password) {  
+                // Here you would typically send a request to your backend  
+                alert('تم تسجيل الدخول بنجاح');  
+                // If you want to redirect, you can use window.location.href = 'your-page.html';  
+            } else {  
+                alert('الرجاء مليء wszystkich pól');  
+            }  
+        });  
+
+        // Handle Enter key press  
+        document.getElementById('password').addEventListener('keypress', function(e) {  
+            if (e.key === 'Enter') {  
+                document.getElementById('loginForm').dispatchEvent(new Event('submit'));  
+            }  
+        });  
+    </script>  
+</body>  
+</html>  
